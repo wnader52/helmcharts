@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  hello-world:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-09T20:28:21.981361905-05:00"
+    description: A Helm chart for installing hello-world in Kubernetes cluster
+    digest: dd58b8b6b307ab27aa7a1b360fec8a1247446813529748f1cf40e73c26e0d918
+    name: hello-world
+    type: application
+    urls:
+    - hello-world-0.1.0.tgz
+    version: 0.1.0
+  redis:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-03-09T20:28:21.991104318-05:00"
+    description: A Helm chart for installing redis in the Kubernetes cluster
+    digest: d341786b7c11f91181aff40b621d6807be064282cbf05d094dba8db62ead5ad4
+    name: redis
+    type: application
+    urls:
+    - redis-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-09T20:28:21.961922198-05:00"
