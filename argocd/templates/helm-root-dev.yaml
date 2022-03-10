@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-root-dev
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+
+spec:
+  project: default
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  source:
+    path: argocd/
+    repoURL: https://github.com/wnader52/helmcharts.git
+    targetRevision: development
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
