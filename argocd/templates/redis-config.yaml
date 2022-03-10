@@ -14,7 +14,7 @@ spec:
     namespace: argocd
 
   source:
-    path: charts/redis
+    path: charts
     repoURL: https://github.com/wnader52/helmcharts.git
     targetRevision: development
 
