@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis-app
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+
+spec:
+  project: default
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+
+  source:
+    path: charts/redis
+    repoURL: https://github.com/wnader52/helmcharts.git
+    targetRevision: development
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    
+    automated:
+      prune: true
+      selfHeal: true
