@@ -1,3 +1,4 @@
 apiVersion: v2
-name: root
+name: helm-root-dev
+namespace: argocd
 version: 1.0.0

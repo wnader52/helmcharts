@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: helm-root-dev
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 
@@ -10,7 +11,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: argocd
 
   source:
     path: argocd/
@@ -18,6 +19,9 @@ spec:
     targetRevision: development
 
   syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    
     automated:
       prune: true
       selfHeal: true
